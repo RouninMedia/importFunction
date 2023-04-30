@@ -16,7 +16,7 @@ ____
 
 ## Example:
 
-### `/my-file-path/increase-by-two.js`
+### `/path-to-esmodule/increase-by-two.js`
 ```js
 const increaseByTwo = (integer) => {
 
@@ -30,7 +30,7 @@ export default increaseByTwo;
 ```js
 const myAsyncFunction = async () => {
 
-  const increaseByTwo = await importFunction('/my-file-path/increase-by-two.js');
+  const increaseByTwo = await importFunction('/path-to-esmodule/increase-by-two.js');
 
   console.log(increaseByTwo(2)); // 4
 }
