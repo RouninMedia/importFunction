@@ -1,6 +1,5 @@
 # importFunction()
-A simple helper function which enables ESModules containing single-functions to be imported on demand into conventional JS files via dynamic import()
-
+A simple helper function which utilises dynamic import() to enable conventional JS files to import, asynchronously, ESModules containing single-functions, on demand / whenever needed.
 _____
 
 ## `importFunction()`
@@ -29,9 +28,12 @@ export default increaseByTwo;
 
 ### `/my-scripts.js`
 ```js
-const increaseByTwo = importFunction('/my-file-path/increase-by-two.js');
+const myAsyncFunction = async () => {
 
-console.log(increaseByTwo(2)); // 4
+  const increaseByTwo = await importFunction('/my-file-path/increase-by-two.js');
+
+  console.log(increaseByTwo(2)); // 4
+}
 ```
 
 
