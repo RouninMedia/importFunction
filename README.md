@@ -5,9 +5,15 @@ _____
 ## `importFunction()`
 
 ```js
-const importFunction = async (URL) => {
+const importFunction = async (URL, globalName = null) => {
           
   const importedESModuleObject = await import(URL);
+
+  if (globalName !== null) {
+
+    window[globalName] = importedESModuleObject.default;
+  }
+
   return importedESModuleObject.default;
 }
 ```
